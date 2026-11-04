@@ -12,24 +12,81 @@
 [contributor-shield]:https://img.shields.io/github/contributors/sailpoint-oss/repo-template?label=Contributors
 [contributors-url]:https://github.com/sailpoint-oss/repo-template/graphs/contributors
 
-# application-title-here
+# IIQ Applications Entitlements Plugin 
 [Explore the docs »](https://your-link-to-colab-topic-here)
 
 [New to the CoLab? Click here »](https://developer.sailpoint.com/discuss/t/about-the-sailpoint-developer-community-colab/11230)
 
-<!-- CONTRIBUTING -->
-## Contributing
+<img width="1280" height="742" alt="application-entitlements-plugin-cover" src="https://github.com/user-attachments/assets/3c37e0f5-42d6-4638-95cb-cdcd5d61a953"/>
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+# Application Entitlements
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag `enhancement`.
-Don't forget to give the project a star! Thanks again!
+### Plugin Name: - Application Entitlements
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+### Plugin Version: - 1.0.0
+
+### Supported version: - IdentityIQ 8.0 or above
+
+### Supported browsers: - Any Chromium or Firefox browser (Internet Explorer not supported)
+
+### Primary function: - Adds an **Entitlements** tab to the Application Configuration page so administrators can browse, search, filter, and open the entitlements of an application without leaving the page.
+
+## New In Version 1.0
+
+1. Added an **Entitlements** tab on the Application Configuration page, placed right after the **Accounts** tab.
+2. Added search (button, Enter key, and a clear **×** button) that runs on the server and resets to page 1.
+3. Added an **Attribute Type** dropdown that is populated dynamically from the entitlement types that exist for the selected application (for example `memberOf` for Active Directory, or `roles` / `groups` for custom applications).
+4. Added click-to-sort column headers (ID, Attribute, Display Name, Value).
+5. Added a **Refresh** button and an in-table loading indicator.
+6. Added click-through navigation: the **ID** links to the entitlement's edit page in a new tab, and clicking anywhere else on a row opens the standard IdentityIQ entitlement details view.
+7. Added icon-based **Requestable** column (green check / red cross).
+
+## Features
+
+- **Entitlements tab** - Injected into the existing Application Configuration tab panel, next to **Accounts**. No other tab is modified or resized.
+- **Columns** - ID, Attribute, Display Name, Value, Owner, Requestable.
+- **Pagination** - Server-side. Only the requested page is fetched from IdentityIQ. Shows "Displaying X of Y".
+- **Search** - Matches entitlements for the current application. Supports the search button, the Enter key, and a clear button.
+- **Attribute Type filter** - Dropdown listing the entitlement attribute types found for the application. Leave blank to show all types.
+- **Sorting** - Click a sortable column header to toggle ascending / descending.
+- **Row navigation** - Clicking a row opens the native IdentityIQ entitlement details. The ID column keeps its own hyperlink.
+- **Refresh** - Reloads the current page with the current search, filter, and page size.
+
+## Installation
+
+- Sign in to IdentityIQ as a user with access to the Plugins page.
+- Go to the **Gear icon > Plugins** and upload the plugin ZIP (**New** button, or drag and drop the file).
+- Wait for the plugin to show as installed / enabled.
+
+<img width="1649" height="315" alt="image" src="https://github.com/user-attachments/assets/fe821943-bd25-49fd-a583-f1624252b216"/>
+<img width="460" height="246" alt="image" src="https://github.com/user-attachments/assets/77eaa328-bbb4-419a-af6a-c1f5d449764b"/>
+
+## Configuration
+
+- No additional configuration is required after installation.
+
+## Verification
+
+1. Open **Applications > Application Definition** and open any application that has entitlements in the Entitlement Catalog.
+2. Confirm that an **Entitlements** tab appears right after the **Accounts** tab.
+3. Open the tab and confirm that the entitlements load, the page count and "Displaying X of Y" text are correct, and the Attribute Type dropdown lists the application's entitlement types.
+
+<img width="1919" height="572" alt="image" src="https://github.com/user-attachments/assets/3fbce9b5-6501-4360-ba37-e353d02adc9a" />
+
+## Usage
+
+- **Search** - type a value and press Enter or click the magnifier. Click **×** to clear the search and return to the full list.
+- **Attribute Type** - choose a type to show only that kind of entitlement. Select the blank option to remove the filter.
+- **Paging** - use the arrow buttons, or type a page number in the page box and press Enter to jump directly to that page.
+- **Show ... items** - change how many entitlements are displayed per page.
+- **Refresh** - reload the data without losing the current page, search, or filter.
+- **ID link** - opens the entitlement's edit page in a new browser tab.
+- **Row click** - opens the standard IdentityIQ entitlement details for that entitlement.
+
+## Feedback
+
+- For bugs, feature enhancement requests, issues, or questions please contact me on [LinkedIn](https://www.linkedin.com/in/infantrex) or rexajith55@gmail.com
+
 
 <!-- LICENSE -->
 ## License
